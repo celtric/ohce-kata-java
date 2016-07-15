@@ -15,7 +15,7 @@ public final class Ohce {
         if (clock.now().isMorning()) {
             output.print("¡Buenos días " + name + "!");
         } else if (clock.now().isAfternoon()){
-            output.print("¡Buenos tardes " + name + "!");
+            output.print("¡Buenas tardes " + name + "!");
         } else {
             output.print("¡Buenas noches " + name + "!");
         }

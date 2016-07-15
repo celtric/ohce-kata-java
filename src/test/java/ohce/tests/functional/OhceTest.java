@@ -28,7 +28,7 @@ public final class OhceTest {
 
         run("Ricard");
 
-        output.assertLineHasBeenPrinted("¡Buenos tardes Ricard!");
+        output.assertLineHasBeenPrinted("¡Buenas tardes Ricard!");
     }
 
     @Test
