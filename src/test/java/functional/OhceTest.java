@@ -8,6 +8,8 @@ public final class OhceTest {
 
     private static final int MORNING = 10;
     private static final int AFTERNOON = 18;
+    private static final int NIGHT = 22;
+
     private int hourOfTheDay = MORNING;
 
     @Test
@@ -26,6 +28,15 @@ public final class OhceTest {
         AssertableOutput output = run("Ricard");
 
         output.assertLineHasBeenPrinted("¡Buenos tardes Ricard!");
+    }
+
+    @Test
+    public void greets_the_user_at_night() {
+        nowBeing(NIGHT);
+
+        AssertableOutput output = run("Ricard");
+
+        output.assertLineHasBeenPrinted("¡Buenas noches Ricard!");
     }
 
     //---[ Helpers ]--------------------------------------------------------------------//

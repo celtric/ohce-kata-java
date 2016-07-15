@@ -11,4 +11,8 @@ public final class Now {
     boolean isMorning() {
         return hourOfTheDay == 10;
     }
+
+    boolean isAfternoon() {
+        return hourOfTheDay == 18;
+    }
 }

@@ -13,8 +13,10 @@ public final class Ohce {
     public void run(String name) {
         if (clock.now().isMorning()) {
             output.print("¡Buenos días " + name + "!");
-        } else {
+        } else if (clock.now().isAfternoon()){
             output.print("¡Buenos tardes " + name + "!");
+        } else {
+            output.print("¡Buenas noches " + name + "!");
         }
     }
 }
