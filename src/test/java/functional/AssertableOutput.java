@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 final class AssertableOutput implements Output {
 
@@ -22,6 +22,6 @@ final class AssertableOutput implements Output {
                 .filter(l -> !l.equals(aLine))
                 .collect(Collectors.toList());
 
-        assertEquals("No line matches: " + aLine, 0, notMatchingLine.size());
+        assertTrue("No line matches: " + aLine, notMatchingLine.isEmpty());
     }
 }

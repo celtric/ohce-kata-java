@@ -3,12 +3,18 @@ package ohce;
 public final class Ohce {
 
     private final Output output;
+    private final Clock clock;
 
-    public Ohce(Output output) {
+    public Ohce(Output output, Clock clock) {
         this.output = output;
+        this.clock = clock;
     }
 
     public void run(String name) {
-        output.print("Hola Ricard");
+        if (clock.now().isMorning()) {
+            output.print("¡Buenos días " + name + "!");
+        } else {
+            output.print("¡Buenos tardes " + name + "!");
+        }
     }
 }
