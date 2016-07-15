@@ -28,6 +28,10 @@ public final class Ohce {
             if (i.isPalindrome()) {
                 output.print("¡Bonita palabra!");
             }
+
+            if (i.isStopCommand()) {
+                output.print("Adios " + name);
+            }
         });
     }
 }

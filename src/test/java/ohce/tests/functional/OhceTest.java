@@ -59,6 +59,15 @@ public final class OhceTest {
         output.assertLineHasBeenPrinted("¡Bonita palabra!");
     }
 
+    @Test
+    public void understands_stop_command() {
+        run("Ricard");
+
+        input("Stop!");
+
+        output.assertLineHasBeenPrinted("Adios Ricard");
+    }
+
     //---[ Helpers ]--------------------------------------------------------------------//
 
     private void nowBeing(int hourOfTheDay) {

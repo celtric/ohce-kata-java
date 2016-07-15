@@ -15,4 +15,8 @@ public final class InputLine {
     boolean isPalindrome() {
         return line.equals(reverse());
     }
+
+    boolean isStopCommand() {
+        return line.equals("Stop!");
+    }
 }
