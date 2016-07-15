@@ -11,6 +11,7 @@ public final class Ohce {
     }
 
     public void run(String name) {
+        // TODO: in case of matching hours (e.g. 6) should we print night or morning greeting?
         if (clock.now().isMorning()) {
             output.print("¡Buenos días " + name + "!");
         } else if (clock.now().isAfternoon()){

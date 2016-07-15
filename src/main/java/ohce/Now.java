@@ -9,10 +9,10 @@ public final class Now {
     }
 
     boolean isMorning() {
-        return hourOfTheDay == 10;
+        return hourOfTheDay >= 6 && hourOfTheDay <= 12;
     }
 
     boolean isAfternoon() {
-        return hourOfTheDay == 18;
+        return hourOfTheDay >= 12 && hourOfTheDay <= 20;
     }
 }
