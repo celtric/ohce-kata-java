@@ -17,11 +17,11 @@ final class AssertableOutput implements Output {
     }
 
     void assertLineHasBeenPrinted(String aLine) {
-        Collection<String> notMatchingLine = outputHistory
+        Collection<String> matchingLine = outputHistory
                 .stream()
-                .filter(l -> !l.equals(aLine))
+                .filter(l -> l.equals(aLine))
                 .collect(Collectors.toList());
 
-        assertTrue("No line matches: " + aLine, notMatchingLine.isEmpty());
+        assertFalse("No line matches: " + aLine, matchingLine.isEmpty());
     }
 }

@@ -12,6 +12,7 @@ public final class OhceTest {
 
     private int hourOfTheDay = MORNING;
     private final AssertableOutput output = new AssertableOutput();
+    private final FakeInput input = new FakeInput();
 
     @Test
     public void greets_the_user_in_the_morning() {
@@ -40,13 +41,30 @@ public final class OhceTest {
         output.assertLineHasBeenPrinted("¡Buenas noches Ricard!");
     }
 
+    @Test
+    public void reverses_words() {
+        run();
+
+        input("hola");
+
+        output.assertLineHasBeenPrinted("aloh");
+    }
+
     //---[ Helpers ]--------------------------------------------------------------------//
 
     private void nowBeing(int hourOfTheDay) {
         this.hourOfTheDay = hourOfTheDay;
     }
 
+    private void run() {
+        run("Foo");
+    }
+
     private void run(String name) {
-        new Ohce(output, () -> new Now(hourOfTheDay)).run(name);
+        new Ohce(output, () -> new Now(hourOfTheDay), input).run(name);
+    }
+
+    private void input(String aString) {
+        input.publish(aString);
     }
 }
