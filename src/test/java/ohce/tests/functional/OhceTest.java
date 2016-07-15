@@ -4,6 +4,8 @@ import ohce.Now;
 import ohce.Ohce;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+
 public final class OhceTest {
 
     private static final int MORNING = 10;
@@ -66,6 +68,7 @@ public final class OhceTest {
         input("Stop!");
 
         output.assertLineHasBeenPrinted("Adios Ricard");
+        assertTrue(input.hasBeenStopped());
     }
 
     //---[ Helpers ]--------------------------------------------------------------------//

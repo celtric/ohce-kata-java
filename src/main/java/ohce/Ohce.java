@@ -31,6 +31,7 @@ public final class Ohce {
 
             if (i.isStopCommand()) {
                 output.print("Adios " + name);
+                input.stopListening();
             }
         });
     }

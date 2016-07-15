@@ -4,6 +4,8 @@ public interface Input {
 
     void listen(Listener listener);
 
+    void stopListening();
+
     @FunctionalInterface
     interface Listener {
 
