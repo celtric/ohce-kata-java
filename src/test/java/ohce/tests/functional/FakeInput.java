@@ -1,6 +1,7 @@
 package ohce.tests.functional;
 
 import ohce.Input;
+import ohce.InputLine;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -14,6 +15,6 @@ final class FakeInput implements Input {
     }
 
     void publish(String aString) {
-        listeners.forEach(l -> l.handle(aString));
+        listeners.forEach(l -> l.handle(new InputLine(aString)));
     }
 }

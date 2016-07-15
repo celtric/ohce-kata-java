@@ -22,6 +22,12 @@ public final class Ohce {
             output.print("¡Buenas noches " + name + "!");
         }
 
-        input.listen(i -> output.print(new StringBuilder(i).reverse().toString()));
+        input.listen(i -> {
+            output.print(i.reverse());
+
+            if (i.isPalindrome()) {
+                output.print("¡Bonita palabra!");
+            }
+        });
     }
 }

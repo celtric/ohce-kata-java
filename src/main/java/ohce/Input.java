@@ -7,6 +7,6 @@ public interface Input {
     @FunctionalInterface
     interface Listener {
 
-        void handle(String input);
+        void handle(InputLine input);
     }
 }

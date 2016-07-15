@@ -50,6 +50,15 @@ public final class OhceTest {
         output.assertLineHasBeenPrinted("aloh");
     }
 
+    @Test
+    public void celebrates_palindromes() {
+        run();
+
+        input("oto");
+
+        output.assertLineHasBeenPrinted("¡Bonita palabra!");
+    }
+
     //---[ Helpers ]--------------------------------------------------------------------//
 
     private void nowBeing(int hourOfTheDay) {
