@@ -1,8 +1,10 @@
-package ohce;
+package ohce.adapters;
 
+import ohce.Clock;
+import ohce.Now;
 import java.util.Calendar;
 
-final class SystemClock implements Clock {
+public final class SystemClock implements Clock {
 
     @Override
     public Now now() {

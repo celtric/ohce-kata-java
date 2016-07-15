@@ -1,6 +1,8 @@
-package ohce;
+package ohce.adapters;
 
-final class SystemOutput implements Output {
+import ohce.Output;
+
+public final class SystemOutput implements Output {
 
     @Override
     public void print(String output) {

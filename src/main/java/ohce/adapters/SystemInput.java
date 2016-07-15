@@ -1,10 +1,12 @@
-package ohce;
+package ohce.adapters;
 
+import ohce.Input;
+import ohce.InputLine;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-final class SystemInput implements Input {
+public final class SystemInput implements Input {
 
     private boolean hasBeenStopped = false;
 

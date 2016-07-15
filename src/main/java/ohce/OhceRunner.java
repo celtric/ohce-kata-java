@@ -1,5 +1,9 @@
 package ohce;
 
+import ohce.adapters.SystemClock;
+import ohce.adapters.SystemInput;
+import ohce.adapters.SystemOutput;
+
 final class OhceRunner {
 
     public static void main(String[] args) {
