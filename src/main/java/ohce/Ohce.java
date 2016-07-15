@@ -2,14 +2,14 @@ package ohce;
 
 public final class Ohce {
 
+    private final Input input;
     private final Output output;
     private final Clock clock;
-    private final Input input;
 
-    public Ohce(Output output, Clock clock, Input input) {
+    public Ohce(Input input, Output output, Clock clock) {
+        this.input = input;
         this.output = output;
         this.clock = clock;
-        this.input = input;
     }
 
     public void run(String name) {

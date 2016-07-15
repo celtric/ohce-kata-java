@@ -79,7 +79,7 @@ public final class OhceTest {
     }
 
     private void run(String name) {
-        new Ohce(output, () -> new Now(hourOfTheDay), input).run(name);
+        new Ohce(input, output, () -> new Now(hourOfTheDay)).run(name);
     }
 
     private void input(String aString) {
