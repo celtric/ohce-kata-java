@@ -1,5 +1,6 @@
-package ohce;
+package ohce.tests.unit;
 
+import ohce.Now;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

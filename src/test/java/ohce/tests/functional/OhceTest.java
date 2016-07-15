@@ -1,4 +1,4 @@
-package functional;
+package ohce.tests.functional;
 
 import ohce.Now;
 import ohce.Ohce;

@@ -1,4 +1,4 @@
-package functional;
+package ohce.tests.functional;
 
 import ohce.Output;
 import java.util.ArrayList;
@@ -9,14 +9,14 @@ import static org.junit.Assert.*;
 
 final class AssertableOutput implements Output {
 
-    private Collection<String> outputHistory = new ArrayList<>();
+    private final Collection<String> outputHistory = new ArrayList<>();
 
     @Override
     public void print(String output) {
         outputHistory.add(output);
     }
 
-    public void assertLineHasBeenPrinted(String aLine) {
+    void assertLineHasBeenPrinted(String aLine) {
         Collection<String> notMatchingLine = outputHistory
                 .stream()
                 .filter(l -> !l.equals(aLine))

@@ -8,11 +8,11 @@ public final class Now {
         this.hourOfTheDay = hourOfTheDay;
     }
 
-    boolean isMorning() {
+    public boolean isMorning() {
         return hourOfTheDay >= 6 && hourOfTheDay <= 12;
     }
 
-    boolean isAfternoon() {
+    public boolean isAfternoon() {
         return hourOfTheDay >= 12 && hourOfTheDay <= 20;
     }
 }
