@@ -22,4 +22,8 @@ final class FakeOutput implements Output {
 
         return !matchingLine.isEmpty();
     }
+
+    Object[] lines() {
+        return outputHistory.toArray();
+    }
 }

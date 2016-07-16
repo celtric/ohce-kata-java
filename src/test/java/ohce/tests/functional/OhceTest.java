@@ -71,6 +71,25 @@ public final class OhceTest {
         assertTrue(input.hasBeenStopped());
     }
 
+    @Test
+    public void full_flow() {
+        run("Pedro");
+
+        input("hola");
+        input("oto");
+        input("stop");
+        input("Stop!");
+
+        assertTrue(input.hasBeenStopped());
+        assertArrayEquals(new String[]{
+                "¡Buenos días Pedro!",
+                "aloh",
+                "oto",
+                "¡Bonita palabra!",
+                "pots",
+                "Adios Pedro"}, output.lines());
+    }
+
     //---[ Helpers ]--------------------------------------------------------------------//
 
     private void nowBeing(int hourOfTheDay) {

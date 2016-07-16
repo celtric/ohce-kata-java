@@ -16,22 +16,23 @@ public final class Ohce {
         // TODO: in case of matching hours (e.g. 6) should we print night or morning greeting?
         if (clock.now().isMorning()) {
             output.print("¡Buenos días " + name + "!");
-        } else if (clock.now().isAfternoon()){
+        } else if (clock.now().isAfternoon()) {
             output.print("¡Buenas tardes " + name + "!");
         } else {
             output.print("¡Buenas noches " + name + "!");
         }
 
         input.listen(i -> {
+            if (i.isStopCommand()) {
+                output.print("Adios " + name);
+                input.stopListening();
+                return;
+            }
+
             output.print(i.reverse());
 
             if (i.isPalindrome()) {
                 output.print("¡Bonita palabra!");
-            }
-
-            if (i.isStopCommand()) {
-                output.print("Adios " + name);
-                input.stopListening();
             }
         });
     }
