@@ -13,7 +13,7 @@ public final class OhceTest {
     private static final int NIGHT = 22;
 
     private int hourOfTheDay = MORNING;
-    private final AssertableOutput output = new AssertableOutput();
+    private final FakeOutput output = new FakeOutput();
     private final FakeInput input = new FakeInput();
 
     @Test
@@ -22,7 +22,7 @@ public final class OhceTest {
 
         run("Ricard");
 
-        output.assertLineHasBeenPrinted("¡Buenos días Ricard!");
+        assertTrue(output.containsLine("¡Buenos días Ricard!"));
     }
 
     @Test
@@ -31,7 +31,7 @@ public final class OhceTest {
 
         run("Ricard");
 
-        output.assertLineHasBeenPrinted("¡Buenas tardes Ricard!");
+        assertTrue(output.containsLine("¡Buenas tardes Ricard!"));
     }
 
     @Test
@@ -40,7 +40,7 @@ public final class OhceTest {
 
         run("Ricard");
 
-        output.assertLineHasBeenPrinted("¡Buenas noches Ricard!");
+        assertTrue(output.containsLine("¡Buenas noches Ricard!"));
     }
 
     @Test
@@ -49,7 +49,7 @@ public final class OhceTest {
 
         input("hola");
 
-        output.assertLineHasBeenPrinted("aloh");
+        assertTrue(output.containsLine("aloh"));
     }
 
     @Test
@@ -58,7 +58,7 @@ public final class OhceTest {
 
         input("oto");
 
-        output.assertLineHasBeenPrinted("¡Bonita palabra!");
+        assertTrue(output.containsLine("¡Bonita palabra!"));
     }
 
     @Test
@@ -67,7 +67,7 @@ public final class OhceTest {
 
         input("Stop!");
 
-        output.assertLineHasBeenPrinted("Adios Ricard");
+        assertTrue(output.containsLine("Adios Ricard"));
         assertTrue(input.hasBeenStopped());
     }
 

@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
-
-final class AssertableOutput implements Output {
+final class FakeOutput implements Output {
 
     private final Collection<String> outputHistory = new ArrayList<>();
 
@@ -16,12 +14,12 @@ final class AssertableOutput implements Output {
         outputHistory.add(output);
     }
 
-    void assertLineHasBeenPrinted(String aLine) {
+    boolean containsLine(String aLine) {
         Collection<String> matchingLine = outputHistory
                 .stream()
                 .filter(l -> l.equals(aLine))
                 .collect(Collectors.toList());
 
-        assertFalse("No line matches: " + aLine, matchingLine.isEmpty());
+        return !matchingLine.isEmpty();
     }
 }
